@@ -229,12 +229,15 @@ def jogar(copa):
         if cooldown > 0:
             cooldown -= delta
 
-        if (vidas <= 0 or total_gols >= 50) and gols < 30:
+        if (vidas <= 0 or total_gols >= 50) and gols < 25:
             running = False
             game_over.game_over()
 
-        elif gols == 10:
+        elif gols == 5 and not copa:
             jogar(True)
+
+        elif gols == 5 and copa:
+            game_over.vitoria()
 
         # Atualiza o jogo
         janela.update()

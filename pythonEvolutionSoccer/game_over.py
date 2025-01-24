@@ -17,3 +17,18 @@ def game_over():
 
         fundo.draw()
         janela.update()
+
+
+def vitoria():
+    janela = Window(800, 400)
+    janela.set_title("HEXA!!!")
+    fundo = GameImage("png/campeao.png")
+    teclado = Window.get_keyboard()
+
+    while True:
+        if teclado.key_pressed("ESC"):  # Voltar para o menu principal
+            menu.menu()
+            break
+
+        fundo.draw()
+        janela.update()
